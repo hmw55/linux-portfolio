@@ -1,0 +1,33 @@
+.taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 36px;
+    background-color: #1a1d24;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    border-top: 1px solid #2a2f3a;
+    font-family: monospace;
+    color: #cfd3ff;
+}
+
+.taskbar__launcher {
+    background-color: #2a2f3a;
+    border: 1px solid #3a3f4a;
+    border-radius: 4px;
+    color: #cfd3ff;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.taskbar__launcher:hover{
+    background-color: #3a3f4a;
+}
+
+.taskbar__time {
+    font-size: 0.85rem;
+}
