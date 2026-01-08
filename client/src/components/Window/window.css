@@ -1,0 +1,26 @@
+.window {
+    position: absolute;
+    width: 320px;
+    background-color: #161922;
+    border: 1px solid #2a2f3a;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.window__titlebar {
+    height: 32px;
+    background-color: #1e2230;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 0.85rem;
+    user-select: none;
+}
+
+.window__title {
+    color: #cfd3ff;
+}
+
+.window__content {
+    padding: 12px;
+}
