@@ -1,6 +1,9 @@
 import { useState } from "react";
 import Desktop from "./components/Desktop";
+
 import Window from "./components/Window";
+
+import CalculatorApp from "./apps/Calculator";
 
 function App() {
   
@@ -14,9 +17,21 @@ function App() {
           onClose={() => setShowCalculator(false)}
           zIndex={1}
         >
-          <p>Calculator coming soon...</p>
+          <CalculatorApp />
         </Window>
       )}
+
+      <button
+        style={{
+          position: "absolute",
+          bottom: 20,
+          left: 20,
+          padding: "6px 12px",
+        }}
+        onClick={() => setShowCalculator(true)}
+      >
+        Open Calculator
+      </button>
 
     </Desktop>
   );
