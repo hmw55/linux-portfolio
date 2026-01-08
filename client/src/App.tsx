@@ -1,8 +1,13 @@
+import Desktop from "./components/Desktop";
+import Window from "./components/Window";
+
 function App() {
   return (
-    <div id="desktop">
-      {/* Desktop environment will live here */}
-    </div>
+    <Desktop>
+      <Window title="Calculator">
+        <p>Calculator coming soon...</p>
+      </Window>
+    </Desktop>
   );
 }
 
