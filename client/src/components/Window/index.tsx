@@ -4,9 +4,11 @@ import "./window.css";
 interface WindowProps {
     title: string;
     children?: React.ReactNode;
+    onClose?: () => void;
+    zIndex?: number;
 }
 
-function Window({ title, children }: WindowProps) {
+function Window({ title, children, onClose, zIndex = 1 }: WindowProps) {
     const [position, setPosition] = useState({ x: 200, y: 150 });
     const dragging = useRef(false);
     const offset = useRef({ x: 0, y: 0 });
@@ -51,10 +53,22 @@ function Window({ title, children }: WindowProps) {
             style={{
                 left: position.x,
                 top: position.y,
+                zIndex,
             }}
+            // onMouseDown={() => {
+
+            // }}
         >
             <div className="window__titlebar" onMouseDown={onMouseDown}>
                 <span className="window__title">{title}</span>
+                <button
+                    className="window__close"
+                    onClick={() => {
+                        if (onClose) onClose();
+                    }}
+                >
+                    ✕
+                </button>
             </div>
             <div className="window__content">{children}</div>
         </div>
