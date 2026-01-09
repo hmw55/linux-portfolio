@@ -17,7 +17,17 @@ export default function Terminal() {
 
                     Type 'help' to get started.
                 </pre>
+
+                <div className="terminal__prompt">
+                    <span className="prompt">mack@portfolio:~$</span>
+                    <input 
+                        className="terminal__input" 
+                        autoFocus
+                        spellCheck={false}
+                    />
+                </div>
             </div>
         </div>
-    )
+    );
 }
+

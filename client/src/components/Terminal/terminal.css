@@ -12,6 +12,7 @@
     flex-direction: column;
     font-family: "Jetbrains Mono", monospace;
     color: #e5e7eb;
+    opacity: 0.9;
 }
 
 .terminal__titlebar {
@@ -34,11 +35,14 @@
     margin: 0 0 16px 0;
     color: #9ca3af;
     font-size: 13px;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 .terminal__prompt {
     display: flex;
     align-items: center;
+    gap: 6px;
 }
 
 .prompt {
@@ -51,6 +55,9 @@
     border: none;
     outline: none;
     color: #e5e7eb;
+    caret-color: #22d3ee;
+    padding: 2px 0;
+    min-height: 18px;
     font-family: inherit;
     font-size: 14px;
     flex: 1;
