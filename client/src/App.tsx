@@ -1,7 +1,10 @@
 import { useState } from "react";
+
 import Desktop from "./components/Desktop";
 import Window from "./components/Window";
 import Taskbar from "./components/Taskbar";
+import Terminal from "./components/Terminal";
+
 import { apps } from "./apps/registry";
 import type { AppEntry } from "./apps/registry";
 
@@ -74,7 +77,8 @@ function App() {
           <app.component />
         </Window>
       ))}
-
+      <Terminal />
+      
       <Taskbar onLauncherClick={handleLauncher} />
     </Desktop>
   );
