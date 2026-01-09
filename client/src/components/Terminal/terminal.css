@@ -62,3 +62,16 @@
     font-size: 14px;
     flex: 1;
 }
+
+.terminal__line {
+    font-size: 14px;
+    display: flex;    
+    align-items: center;
+    gap: 6px;
+}
+
+.terminal__command {
+    color: #e5e7eb;
+    white-space: pre-wrap;
+    margin-left: 6px;
+}
