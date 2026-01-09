@@ -1,8 +1,13 @@
 import { useState } from "react";
 import "./terminal.css";
 
+type TerminalEntry = {
+    type: "command" | "output";
+    text: string;
+}
+
 export default function Terminal() {
-    const [history, setHistory] = useState<string[]>([]);
+    const [history, setHistory] = useState<TerminalEntry[]>([]);
     const [input, setInput] = useState("");
 
     function handleSubmit(e: React.KeyboardEvent<HTMLInputElement>) {
@@ -12,7 +17,19 @@ export default function Terminal() {
 
         if (input.trim() == "") return;
 
-        setHistory(prev => [...prev, input]);
+        const newHistory: TerminalEntry[] = [...history, { type: "command", text: input }];
+
+        if (input.trim().toLowerCase() === "help") {
+            newHistory.push(
+                { type: "output", text: "Available commands:"},
+                { type: "output", text: "help       → Show this message"},
+                { type: "output", text: "ls         → List files in home directory"},
+                { type: "output", text: "clear      → Clear the terminal"},
+                { type: "output", text: "Use Super+L to open the app launcher."},
+            );
+        }
+
+        setHistory(newHistory);
         setInput("");
     }
 
@@ -33,12 +50,20 @@ export default function Terminal() {
                     Type 'help' to get started.
                 </pre>
 
-                {history.map((line, i) => (
-                    <div className="terminal__line" key={i}>
-                        <span className="prompt">[mack@portfolio ~]$</span>
-                        <span className="terminal__command">{line}</span>
+                {history.map((entry, i) => 
+                    entry.type === "command" ? (
+                        <div className="terminal__line" key={i}>
+                            <span className="prompt">[mack@portfolio ~]$</span>
+                            <span className="terminal__command">
+                                {entry.text}
+                            </span>
+                        </div>
+                ) : (
+                    <div className="termain__line terminal__output" key={i}>
+                        {entry.text}
                     </div>
-                ))}
+                    )
+                )}
 
                 <div className="terminal__prompt">
                     <span className="prompt">[mack@portfolio ~]$</span>

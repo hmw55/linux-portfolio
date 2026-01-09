@@ -75,3 +75,9 @@
     white-space: pre-wrap;
     margin-left: 6px;
 }
+
+.terminal__output {
+    margin-left: 18px;
+    color: #e5e7eb;
+    white-space: pre-wrap;
+}
