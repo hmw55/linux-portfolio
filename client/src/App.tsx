@@ -5,6 +5,7 @@ import Taskbar from "./components/Taskbar";
 import { apps } from "./apps/registry";
 import type { AppEntry } from "./apps/registry";
 
+
 interface OpenApp {
   app: AppEntry;
   zIndex: number;
@@ -56,7 +57,7 @@ function App() {
   };
 
   return (
-    <Desktop>
+    <Desktop backgroundUrl="/wallpapers/desktopBackground1.gif">
       {openApps.map(({ app, zIndex, initialX, initialY, width, height, floating }) => (
         <Window
           key={app.id}

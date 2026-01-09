@@ -2,10 +2,22 @@ import "./desktop.css"
 
 interface DesktopProps {
     children?: React.ReactNode;
+    backgroundUrl?: string;
 }
 
-function Desktop({ children }: DesktopProps) {
-    return <div className="desktop">{children}</div>
+function Desktop({ children, backgroundUrl }: DesktopProps) {
+    return (
+        <div 
+            className="desktop"
+            style={{
+                backgroundImage: backgroundUrl
+                    ? `url(${backgroundUrl})`
+                    : undefined,
+            }}
+            >
+            {children}
+        </div>
+    )
 }
 
 export default Desktop;
