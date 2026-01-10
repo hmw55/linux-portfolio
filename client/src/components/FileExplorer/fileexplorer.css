@@ -1,0 +1,30 @@
+.file__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    padding: 16px;
+}
+
+.folder__icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.folder__icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.folder__icon img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+}
+
+.folder__icon span {
+    font-size: 14px;
+    color: #e5e7eb;
+}

@@ -4,6 +4,7 @@ import Desktop from "./components/Desktop";
 import Window from "./components/Window";
 import Taskbar from "./components/Taskbar";
 import Terminal from "./components/Terminal";
+import FileExplorer from "./components/FileExplorer";
 
 import { apps } from "./apps/registry";
 import type { AppEntry } from "./apps/registry";
@@ -78,6 +79,7 @@ function App() {
         </Window>
       ))}
       <Terminal />
+      <FileExplorer />
       
       <Taskbar onLauncherClick={handleLauncher} />
     </Desktop>
